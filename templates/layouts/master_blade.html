@@ -1,0 +1,54 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+
+<head>
+    {% block title %}
+    <title>OurSite</title>
+    {% endblock title %}
+    <meta charset="utf-8">
+    {% block styles %}
+    {% endblock %}
+    {% block scripts %}
+    {% endblock %}
+<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.form/4.2.2/jquery.form.min.js" integrity="sha384-FzT3vTVGXqf7wRfy8k4BiyzvbNfeYjK+frTVqZeNDFl8woCbF0CYG6g2fMEFFo/i" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+</head>
+
+<body>
+    {# ************** navbar  ***************   #}
+    {% include 'partials/navbar.html' %}
+   
+    <!-- *********** main container **************** -->
+    <div class="container">
+        {% block content %}
+              <div class="col-md-6 col-md-offset-3" style="margin-top: 200px">
+              <form action="/zhilianzhaopin/" method="post">
+                  <div class="input-group">
+                          <input type="text" class="form-control" placeholder="Search for..." name="kw">
+                          <span class="input-group-btn">
+        <button class="btn btn-default" type="submit">Go!</button>
+      </span>
+
+                  </div><!-- /input-group -->
+                  {% csrf_token %}
+               </form>
+              </div><!-- /.col-lg-6 -->
+
+
+        {% endblock content %}
+
+    </div>
+    {%  block foot %}
+    {% include 'partials/footer.html' %}
+    {% endblock %}
+    {% block scripts_body %}
+    {% endblock %}
+ 
+
+
+</body>
+
+</html>

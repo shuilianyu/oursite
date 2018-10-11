@@ -1,0 +1,370 @@
+{% extends 'layouts/master_blade.html' %}
+
+
+{#action="{% url 'zhilianzhaopin:jobs' 1 %}" #}
+{% block content %}
+    <br>
+    <br>
+    <div class='container'>
+        <div class="col-md-7 col-md-offset-2">
+
+            <div class="input-group">
+
+                <input type="text" class="form-control" id="kw" placeholder="按照关键词搜索。。。" value="{{ msg }}">
+                <span class="input-group-btn">
+        <button class="btn btn-default" type="button" id="kw_btn" url="{% url 'zhilianzhaopin:jobs' 1 %}">搜索</button>
+      </span>
+
+            </div><!-- /input-group -->
+
+        </div><!-- /.col-lg-6 -->
+    </div>
+    <br>
+    <hr>
+    <div class="container">
+        <div class="col-md-1" style="font-size: 18px"><b>地点:</b></div>
+        <div class="col-md-1 bg-primary" style="line-height:26px;font-size: 16px;height: 25px;text-align: center;"
+             id="citys">全国<span class="caret"></span></div>
+    </div>
+    <div class="container" id="city_hid_one" style="display: none;">
+        <hr>
+    </div>
+    <div class="container" style="display: none;" id="city_hid_two">
+        <div>
+            <div class="col-md-1 col-md-offset-1 city_1"
+                 style="line-height:26px;font-size: 16px;height: 25px;text-align: center;" id="citys"><a href="#"
+                                                                                                         style="text-decoration: none;color: black;">全国</a>
+            </div>
+            <div class="col-md-1 city_1" style="line-height:26px;font-size: 16px;height: 25px;text-align: center;">北京
+            </div>
+            <div class="col-md-1 city_1" style="line-height:26px;font-size: 16px;height: 25px;text-align: center;">上海
+            </div>
+            <div class="col-md-1 city_1" style="line-height:26px;font-size: 16px;height: 25px;text-align: center;">深圳
+            </div>
+            <div class="col-md-1 city_1" style="line-height:26px;font-size: 16px;height: 25px;text-align: center;">广州
+            </div>
+            <div class="col-md-1 city_1" style="line-height:26px;font-size: 16px;height: 25px;text-align: center;">天津
+            </div>
+            <div class="col-md-1 city_1" style="line-height:26px;font-size: 16px;height: 25px;text-align: center;">郑州
+            </div>
+            <div class="col-md-1 city_1" style="line-height:26px;font-size: 16px;height: 25px;text-align: center;">成都
+            </div>
+            <div class="col-md-1 city_1" style="line-height:26px;font-size: 16px;height: 25px;text-align: center;">杭州
+            </div>
+            <div class="col-md-1 city_1" style="line-height:26px;font-size: 16px;height: 25px;text-align: center;">武汉
+            </div>
+        </div>
+        <br>
+        <br>
+        <div>
+            <div class="col-md-1 col-md-offset-1 city_1"
+                 style="line-height:26px;font-size: 16px;height: 25px;text-align: center;" id="citys"><a href="#"
+                                                                                                         style="text-decoration: none;color: black;">大连</a>
+            </div>
+            <div class="col-md-1 city_1" style="line-height:26px;font-size: 16px;height: 25px;text-align: center;">长春
+            </div>
+            <div class="col-md-1 city_1" style="line-height:26px;font-size: 16px;height: 25px;text-align: center;">南京
+            </div>
+            <div class="col-md-1 city_1" style="line-height:26px;font-size: 16px;height: 25px;text-align: center;">济南
+            </div>
+            <div class="col-md-1 city_1" style="line-height:26px;font-size: 16px;height: 25px;text-align: center;">青岛
+            </div>
+            <div class="col-md-1 city_1" style="line-height:26px;font-size: 16px;height: 25px;text-align: center;">苏州
+            </div>
+            <div class="col-md-1 city_1" style="line-height:26px;font-size: 16px;height: 25px;text-align: center;">沈阳
+            </div>
+            <div class="col-md-1 city_1" style="line-height:26px;font-size: 16px;height: 25px;text-align: center;">西安
+            </div>
+            <div class="col-md-1 city_1" style="line-height:26px;font-size: 16px;height: 25px;text-align: center;">长沙
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <hr>
+    </div>
+    <div class="container" id="category">
+        <div class="col-md-1" style="font-size: 18px"><b>职位:</b></div>
+        <div class="col-md-1 bg-primary category"
+             style="line-height:26px;font-size: 16px;height: 25px;text-align: center;">不限
+        </div>
+        <div class="col-md-1 category" style="line-height:26px;font-size: 16px;height: 25px;text-align: center;">前端开发
+        </div>
+        <div class="col-md-1 category" style="line-height:26px;font-size: 16px;height: 25px;text-align: center;">后端开发
+        </div>
+        <div class="col-md-1 category" style="line-height:26px;font-size: 16px;height: 25px;text-align: center;">数据分析
+        </div>
+        <div class="col-md-1 category" style="line-height:26px;font-size: 16px;height: 25px;text-align: center;">软件开发
+        </div>
+        <div class="col-md-1 category" style="line-height:26px;font-size: 16px;height: 25px;text-align: center;">软件测试
+        </div>
+
+        <div class="col-md-1 category" style="line-height:26px;font-size: 16px;height: 25px;text-align: center;">
+            讲师
+        </div>
+    </div>
+    <div class="container">
+        <hr>
+    </div>
+    <div class="container" id="wage">
+        <div class="col-md-1" style="font-size: 18px"><b>月薪:</b></div>
+        <div class="col-md-1 bg-primary wage" style="line-height:26px;font-size: 16px;height: 25px;text-align: center;">
+            不限
+        </div>
+        <div class="col-md-1 wage" style="line-height:26px;font-size: 16px;height: 25px;text-align: center;">7k以下</div>
+        <div class="col-md-1 wage" style="line-height:26px;font-size: 16px;height: 25px;text-align: center;">7k-10k
+        </div>
+        <div class="col-md-1 wage" style="line-height:26px;font-size: 16px;height: 25px;text-align: center;">10k-15k
+        </div>
+        <div class="col-md-1 wage" style="line-height:26px;font-size: 16px;height: 25px;text-align: center;">15k-20k
+        </div>
+        <div class="col-md-1 wage" style="line-height:26px;font-size: 16px;height: 25px;text-align: center;">20k以上</div>
+    </div>
+    <div class="container">
+        <hr>
+    </div>
+    <div class="container">
+        <div class="col-md-1" style="font-size: 18px"><b>其他:</b></div>
+        <div class="dropdown col-md-1" style="margin-left: -12px">
+            <button class="btn btn-sm dropdown-toggle years" type="button" id="dropdownMenu1" data-toggle="dropdown"
+                    aria-haspopup="true" aria-expanded="true">
+                工作经验
+                <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                <li><a href="#" class="year">1-3年</a></li>
+                <li><a href="#" class="year">10年以上</a></li>
+                <li><a href="#" class="year">1年以下</a></li>
+                <li><a href="#" class="year">3-5年</a></li>
+                <li><a href="#" class="year">5-10年</a></li>
+                <li><a href="#" class="year">不限</a></li>
+                <li><a href="#" class="year">无经验</a></li>
+            </ul>
+        </div>
+        <div class="col-md-1" style="margin-left: 20px">
+            <div class="dropdown">
+                <button class="btn btn-sm dropdown-toggle edus" type="button" id="dropdownMenu1" data-toggle="dropdown"
+                        aria-haspopup="true" aria-expanded="true">
+                    学历要求
+                    <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                    <li><a href="#" class="edu">不限</a></li>
+                    <li><a href="#" class="edu">本科</a></li>
+                    <li><a href="#" class="edu">硕士</a></li>
+                    <li><a href="#" class="edu">博士</a></li>
+                    <li><a href="#" class="edu">大专</a></li>
+                    <li><a href="#" class="edu">中专</a></li>
+                    <li><a href="#" class="edu">中技</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <hr>
+    <div id="results">
+    </div>
+    <div class="container">
+        <div class="col-md-9 col-md-offset-7">
+            <nav aria-label="Page navigation">
+                <ul class="pagination" id="page_btn">
+                </ul>
+            </nav>
+        </div>
+    </div>
+
+{% endblock %}
+{% block scripts_body %}
+    <script type="text/javascript">
+        var i = 1;
+        var hiddenBox_one = $("#city_hid_one");
+        var hiddenBox_two = $("#city_hid_two");
+        var p = 1;
+        $("#citys").on("click", function (event) {
+            if (i == 1) {
+                hiddenBox_one.show();
+                hiddenBox_two.show();
+                i = 2;
+            } else {
+                hiddenBox_one.hide();
+                hiddenBox_two.hide();
+                i = 1;
+            }
+        });
+        $(".city_1").on("click", function (event) {
+            hiddenBox_one.hide();
+            hiddenBox_two.hide();
+            i = 1;
+            $("#citys").text($(this).text());
+            p = 1;
+            search();
+        });
+        $('.wage').click(function () {
+            $('#wage .bg-primary').removeClass('bg-primary');
+            $(this).addClass('bg-primary');
+            p=1;
+            search()
+
+        });
+        $('.category').click(function () {
+            $('#category .bg-primary').removeClass('bg-primary');
+            $(this).addClass('bg-primary');
+            p=1;
+            search()
+
+        });
+        $('.year').click(function () {
+            $('.years').text($(this).text());
+            p = 1;
+            search();
+        });
+        $('.edu').click(function () {
+            $('.edus').text($(this).text());
+            p = 1;
+            search();
+        });
+
+        $('#kw_btn').click(function () {
+            p = 1;
+            search();
+        });
+        $(document).ready(function () {
+            p = 1;
+            search();
+        });
+
+        function page1() {
+            p = Number($(".page_num1").text());
+            search()
+        }
+
+        function page2() {
+            p = Number($(".page_num2").text());
+            search()
+        }
+
+        function page3() {
+            p = Number($(".page_num3").text());
+            search()
+        }
+
+        function page4() {
+            p = Number($(".page_num4").text());
+            search()
+        }
+
+        function page5() {
+
+            p = Number($(".page_num5").text());
+            search()
+        }
+
+        function page6() {
+            p = Number($(".page_num6").text());
+            search()
+        }
+
+        function next() {
+            p = Number($('.active').text()) + 1;
+            search();
+        }
+
+        function pre() {
+            p = Number($('.active').text()) - 1;
+            search();
+        }
+
+        function search() {
+            $.ajax({
+                type: 'get',
+                dataType: "json",
+                data: {
+                    'kw': $('#kw').val(),
+                    'city': $('#citys').text(),
+                    'years': $('.years').text(),
+                    'edu': $('.edus').text(),
+                    'wage': $('#wage .bg-primary').text(),
+                    'category': $('#category .bg-primary').text(),
+                    'page': p,
+
+                },
+                url: $('#kw_btn').attr('url'),
+                success: function (data) {
+                    render(data);
+                    add_page_btn(data.num_page, data.page);
+                    $(window).scrollTop(100);
+                }
+            })
+        }
+
+        function render(results) {
+            var html = '';
+            for (var i = 0; i < results.msg.length; i++) {
+                var ru_data = JSON.parse(results.msg[i]);
+                html += '<div class="container"><div class="col-md-9 col-md-offset-1"><div>' +
+                    '<div class="col-md-7" style="height: 30px;line-height:30px;font-size: 18px;"><a href ="work_detail/' + String(ru_data['id']) + '/">' + ru_data['job_title'] + '</a></div><div class="col-md-offset-8" style="height: 30px;line-height:30px;font-size: 16px;">' + ru_data['company_name'] + '</div><br><div><div class="col-md-9" style="height: 30px;line-height:30px;font-size: 14px;"><span style="font-size: 18px;color: red;">&nbsp' + ru_data['wage'] + '&nbsp</span>|&nbsp' + ru_data['location'] + '&nbsp| &nbsp' + ru_data['work_experience'] + '&nbsp|&nbsp' + ru_data['education'] + '</div></div></div></div></div><div class="container"><hr></div>'
+            }
+            $('#results').html(html);
+
+        }
+
+        function add_page_btn(num_total, num_page) {
+            var html = '';
+            if (num_page > 1) {
+                html += '<li><a id="pre" href="javascript:void(0)" onclick="pre()">&laquo;</a></li>'
+            } else {
+                html += '<li><a>&laquo;</a></li>'
+            }
+            if (num_total <= 6) {
+                for (var i = 0; i < num_total; i++) {
+                    if (num_page == i + 1) {
+                        html += '<li class="active"><a href="javascript:void(0)">' + String(i + 1) + '</a></li>'
+                    } else {
+                        html += '<li><a href="javascript:void(0)" class="page_num' + String(i + 1) + '" onclick="page' + String(i + 1) + '()">' + String(i + 1) + '</a></li>'
+                    }
+
+                }
+            } else {
+                if (num_page < 4) {
+                    for (var j = 1; j < 6; j++) {
+                        if (num_page == j) {
+                            html += '<li class="active"><a href="javascript:void(0)">' + String(j) + '</a></li>'
+                        } else {
+                            html += '<li><a href="javascript:void(0)" class="page_num' + String(j) + '" onclick="page' + String(j) + '()">' + String(j) + '</a></li>'
+                        }
+                    }
+
+                    html += '<li><a href="javascript:void(0)">…</a></li>'
+                } else if (num_page > num_total - 4) {
+                    html += '<li><a href="javascript:void(0)" class="page_num1" onclick="page1()">1</a></li>';
+                    html += '<li><a href="javascript:void(0)">…</a></li>';
+                    for (var k = 3; k >= 0; k--) {
+                        if (num_page == num_total - k) {
+                            html += '<li class="active"><a href="javascript:void(0)" class="page_num">' + String(num_total - k) + '</a></li>'
+                        } else {
+                            html += '<li><a href="javascript:void(0)" class="page_num' + String(6 - k) + '" onclick="page' + String(6 - k) + '()">' + String(num_total - k) + '</a></li>'
+                        }
+                    }
+
+                } else {
+                    html += '<li><a href="javascript:void(0)" class="page_num1" onclick="page1()">1</a></li>';
+                    html += '<li><a href="javascript:void(0)">…</a></li>';
+                    html += '<li><a href="javascript:void(0)" class="page_num3" onclick="page3()">' + String(num_page - 1) + '</a></li>';
+                    html += '<li class="active"><a href="javascript:void(0)" class="page_num">' + String(num_page) + '</a></li>';
+                    html += '<li><a href="javascript:void(0)" class="page_num5" onclick="page5()">' + String(num_page + 1) + '</a></li>';
+                    html += '<li><a href="javascript:void(0)" class="page_num">…</a></li>';
+
+                }
+
+            }
+
+            if (num_page == num_total) {
+                html += '<li><a>&raquo;</a></li>'
+            } else {
+                html += '<li><a id="next" href="javascript:void(0)" onclick="next()">&raquo;</a></li>'
+            }
+            $('#page_btn').html(html)
+        }
+    </script>
+
+{% endblock %}
+{% block foot %}
+{% endblock %}

@@ -1,0 +1,72 @@
+{% extends 'layouts/master_blade.html' %}
+{% block content %}
+    <div class="container" style="margin-top: 30px">
+        <div class="col-md-2 col-md-offset-2 text-right"><span style="font-size: 18px"><b>职位名称：</b></span></div>
+        <div class="col-md-8"><span style="font-size: 16px">{{ msg.job_title }}</span></div>
+    </div>
+    <br>
+    <div class="container">
+        <div class="col-md-2 col-md-offset-2 text-right"><span style="font-size: 18px"><b>公司名称：</b></span></div>
+        <div class="col-md-8"><span style="font-size: 16px">{{ msg.company_name }}</span></div>
+    </div>
+    <br>
+    <div class="container">
+        <div class="col-md-2 col-md-offset-2 text-right"><span style="font-size: 18px"><b>职位月薪：</b></span></div>
+        <div class="col-md-8"><span style="font-size: 16px">{{ msg.wage1 }}</span></div>
+    </div>
+    <br>
+    <div class="container">
+        <div class="col-md-2 col-md-offset-2 text-right"><span style="font-size: 18px"><b>工作地点：</b></span></div>
+        <div class="col-md-8"><span style="font-size: 16px">{{ msg.location }}</span></div>
+    </div>
+    <br>
+    <div class="container">
+        <div class="col-md-2 col-md-offset-2 text-right"><span style="font-size: 18px"><b>工作经验：</b></span></div>
+        <div class="col-md-8"><span style="font-size: 16px">{{ msg.work_experience }}</span></div>
+    </div>
+    <br>
+    <div class="container">
+        <div class="col-md-2 col-md-offset-2 text-right"><span style="font-size: 18px"><b>学历要求：</b></span></div>
+        <div class="col-md-8"><span style="font-size: 16px">{{ msg.education }}</span></div>
+    </div>
+    <br>
+    <div class="container">
+        <div class="col-md-2 col-md-offset-2 text-right"><span style="font-size: 18px"><b>招聘人数：</b></span></div>
+        <div class="col-md-8"><span style="font-size: 16px">{{ msg.recruits_number }}</span></div>
+    </div>
+    <br>
+    <div class="container">
+        <div class="col-md-2 col-md-offset-2 text-right"><span style="font-size: 18px"><b>职位类别：</b></span></div>
+        <div class="col-md-8"><span style="font-size: 16px">{{ msg.job_categories }}</span></div>
+    </div>
+    <br>
+    <div class="container">
+        <div class="col-md-2 col-md-offset-2 text-right"><span style="font-size: 18px"><b>公司规模：</b></span></div>
+        <div class="col-md-8"><span style="font-size: 16px">{{ msg.company_size }}</span></div>
+    </div>
+    <br>
+    <div class="container">
+        <div class="col-md-2 col-md-offset-2 text-right"><span style="font-size: 18px"><b>公司性质：</b></span></div>
+        <div class="col-md-8"><span style="font-size: 16px">{{ msg.company_type }}</span></div>
+    </div>
+    <br>
+    <div class="container">
+        <div class="col-md-2 col-md-offset-2 text-right"><span style="font-size: 18px"><b>公司详细地址：</b></span></div>
+        <div class="col-md-8"><span style="font-size: 16px">{{ msg.company_address }}</span></div>
+    </div>
+    <br>
+    <div class="container">
+        <div class="col-md-2 col-md-offset-2 text-right"><span style="font-size: 18px"><b>各种福利：</b></span></div>
+        <div class="col-md-8"><span style="font-size: 16px">{{ msg.welfare_pos }}</span></div>
+    </div>
+    <br>
+
+    <div class="container">
+        <div class="col-md-2 col-md-offset-2 text-right"><span style="font-size: 18px"><b>职位信息：</b></span></div>
+        <div class="col-md-8"><span style="font-size: 16px">{{ msg.job_description }}</span></div>
+    </div>
+
+
+
+
+{% endblock %}
